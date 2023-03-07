@@ -1,27 +1,41 @@
 const elencoNumeriDom = document.getElementById("elencoNumeriDom");
-let elencoNumeriDaIndovinare = [];
 let numeriDaStampare = 5;
+let rangeMax = 10;
+let elencoNumeriDaIndovinare = [];
 let elencoNumeriIndovinati = [];
+var continuare = true;
 
-for (i = 1; i <= numeriDaStampare; i++) {
-   elencoNumeriDaIndovinare.push(generaNumeroRandom(1, 5));
-}
+do {
+   for (i = 0; i < numeriDaStampare; i++) {
+      elencoNumeriDaIndovinare.push(generaNumeroRandom(1, rangeMax));
+   }
 
-document.getElementById("elencoNumeriDom").innerHTML = elencoNumeriDaIndovinare;
+   document.getElementById("elencoNumeriDom").innerHTML = elencoNumeriDaIndovinare;
 
-setTimeout(verifica,30000);
+   setTimeout(verifica,numeriDaStampare * 3000);
+} while (continuare != true) ;
+
 
 function verifica() {
-   elencoNumeriDom.className = "d-none";
+   elencoNumeriDom.classList.add("d-none");
    for (x = 0; x < numeriDaStampare; x++) {
      let numeroPrompt = parseInt(prompt("Quali numeri ricordi?"));
-      console.log(numeroPrompt);
       if (elencoNumeriDaIndovinare.includes(numeroPrompt)){
-         console.log("bravo");
          elencoNumeriIndovinati.push(numeroPrompt);
       }
    }
+   
    document.getElementById("risultato").innerHTML = `Hai indovinato ${elencoNumeriIndovinati.length} numeri(${elencoNumeriIndovinati})`;
+   if (elencoNumeriIndovinati.length == elencoNumeriDaIndovinare.length) {
+      continuare = confirm("Vuoi continuare?");
+      if (continuare == true) {
+         numeriDaStampare++;
+         elencoNumeriDaIndovinare = [];
+         elencoNumeriIndovinati = [];
+         elencoNumeriDom.classList.remove("d-none");
+         document.getElementById("risultato").innerHTML = ``;
+      }
+   } 
 } 
 
 
