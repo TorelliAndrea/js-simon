@@ -1,20 +1,20 @@
 const elencoNumeriDom = document.getElementById("elencoNumeriDom");
-let numeriDaStampare = 5;
-let rangeMax = 10;
+let numeriDaStampare = 1;
+let rangeMax = 100;
 let elencoNumeriDaIndovinare = [];
 let elencoNumeriIndovinati = [];
-var continuare = true;
+var continuare = false;
 
-do {
-   for (i = 0; i < numeriDaStampare; i++) {
-      elencoNumeriDaIndovinare.push(generaNumeroRandom(1, rangeMax));
-   }
+avviaProgramma();
 
-   document.getElementById("elencoNumeriDom").innerHTML = elencoNumeriDaIndovinare;
-
-   setTimeout(verifica,numeriDaStampare * 3000);
-} while (continuare != true) ;
-
+function avviaProgramma (){
+    for (i = 0; i < numeriDaStampare; i++) {
+        elencoNumeriDaIndovinare.push(generaNumeroRandom(1, rangeMax));
+     }
+  
+     document.getElementById("elencoNumeriDom").innerHTML = elencoNumeriDaIndovinare;
+     setTimeout(verifica,numeriDaStampare * 3000);
+}
 
 function verifica() {
    elencoNumeriDom.classList.add("d-none");
@@ -26,7 +26,7 @@ function verifica() {
    }
    
    document.getElementById("risultato").innerHTML = `Hai indovinato ${elencoNumeriIndovinati.length} numeri(${elencoNumeriIndovinati})`;
-   if (elencoNumeriIndovinati.length == elencoNumeriDaIndovinare.length) {
+   if (elencoNumeriIndovinati.length >= elencoNumeriDaIndovinare.length / 2) {
       continuare = confirm("Vuoi continuare?");
       if (continuare == true) {
          numeriDaStampare++;
@@ -34,6 +34,7 @@ function verifica() {
          elencoNumeriIndovinati = [];
          elencoNumeriDom.classList.remove("d-none");
          document.getElementById("risultato").innerHTML = ``;
+         avviaProgramma();
       }
    } 
 } 
