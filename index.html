@@ -9,20 +9,35 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body class="p-0 m-0">
-        
-        <h1 id="elencoNumeriDom"></h1>
-        <h2 id="risultato"></h2>
+    <body class="p-0 m-0 text-center">
+        <main>
+            <div class="container my-5">  
+                <div id="schermataIniziale">
+                    <h1>TEST DI MEMORIA</h1>
+                    <p class="p-3 fs-4">All'avvio del gioco appariranno dei numeri. Dopo poco tempo spariranno e ti verrà chiesto di ripeterli. Andando avanti, la difficoltà aumenta!</p>
+                    <button id="start" class="btn btn-lg btn-outline-danger mx-2">Gioca</button>
+                    <select id="difficolta" class="btn btn-lg btn-outline-danger mx-2">
+                        <option value="facile">Facile</option>
+                        <option value="medio" selected>Medio</option>
+                        <option value="difficile">Difficile</option>
+                        <option value="pro">Pro</option>
+                    </select>
+                </div>
+                <div id="elencoNumeri" class="d-flex align-items-center justify-content-center flex-wrap d-none">
+                    <!-- <div>5</div> -->
+                </div>
+                <div id="risultato" class="d-flex align-items-center justify-content-center d-none">
 
-        <footer>
-
-            <hr/>
-            <p>Made with &#128151; by 
+                </div>
+            </div>
+        </main>
+        <footer class="fixed-bottom">
+            <hr />
+            <p>Made with &#128151; by
                 <a href="https://github.com/AndreaTorelli87">Andrea</a>
                 &
                 <a href="https://github.com/valeriosalzano">Valerio</a>
             </p>
-
         </footer>
         <script type="text/javascript" src="js/main.js"></script>
     </body>

@@ -2,3 +2,33 @@
    font-family: sans-serif;
 }
 
+body{
+   background-color: lightgray;
+}
+
+#elencoNumeri, #risultato, main{
+   height: calc(100vh - 7rem);
+}
+
+h1{
+   font-size: 10vh;
+   font-weight: bolder;
+}
+
+#difficolta{
+   padding: 11px;
+}
+
+#elencoNumeri div{
+   background-color: white;
+   font-size: 4rem;
+   height: 6rem;
+   width: 6rem;
+   border: solid 2px black;
+   border-radius: 50%;
+   margin: 1rem;
+}
+
+#risultato span{
+   font-size: 7vh;
+}
