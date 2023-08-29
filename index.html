@@ -12,22 +12,24 @@
     <body class="p-0 m-0 text-center">
         <main>
             <div class="container my-5">  
-                <div id="schermataIniziale">
+                <div id="schermataIniziale" class="d-flex align-items-center justify-content-center flex-column">
                     <h1>TEST DI MEMORIA</h1>
-                    <p class="p-3 fs-4">All'avvio del gioco appariranno dei numeri. Dopo poco tempo spariranno e ti verrà chiesto di ripeterli. Andando avanti, la difficoltà aumenta!</p>
-                    <button id="start" class="btn btn-lg btn-outline-danger mx-2">Gioca</button>
-                    <select id="difficolta" class="btn btn-lg btn-outline-danger mx-2">
-                        <option value="facile">Facile</option>
-                        <option value="medio" selected>Medio</option>
-                        <option value="difficile">Difficile</option>
-                        <option value="pro">Pro</option>
-                    </select>
+                    <p class="p-3 fs-4">All'avvio del gioco appariranno dei numeri. <br> Dopo poco tempo spariranno e ti verrà chiesto di ripeterli.<br> Andando avanti, la difficoltà aumenta!</p>
+                    <div>
+                        <select id="difficolta" class="btn btn-lg btn-outline-danger mx-2">
+                            <option value="Seleziona difficoltà" selected>Seleziona difficoltà</option>
+                            <option value="facile">Facile</option>
+                            <option value="medio">Medio</option>
+                            <option value="difficile">Difficile</option>
+                            <option value="pro">Pro</option>
+                        </select> 
+                    </div>
                 </div>
                 <div id="elencoNumeri" class="d-flex align-items-center justify-content-center flex-wrap d-none">
                     <!-- <div>5</div> -->
                 </div>
-                <div id="risultato" class="d-flex align-items-center justify-content-center d-none">
-
+                <div id="risultato" class="d-flex flex-column align-items-center pt-5 d-none">
+                    
                 </div>
             </div>
         </main>
